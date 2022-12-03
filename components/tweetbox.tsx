@@ -10,7 +10,7 @@ export function Tweetbox() {
     const [input, setInput] = useState<string>('');
 
     return (
-        <div className='flex space-x-2 p- 5'>
+        <div className='flex space-x-2 p-5'>
             <img className='h-14 rounded-full object-cover mt-4' src="https://links.papareact.com/gll" alt=""/>
             <div className='flex flex-1 items-center pl-2'>
                 <form className='flex flex-1 flex-col'>

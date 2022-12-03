@@ -1,7 +1,13 @@
 import React from 'react';
 import {ArrowPathIcon} from '@heroicons/react/24/outline';
 import { Tweetbox } from './tweetbox';
-export function Feed() {
+import { Tweet } from '../typings';
+import TweetComponent from './tweet';
+interface Props {
+    tweets: Tweet[];
+};
+
+export function Feed({tweets}: Props) {
     return (
         <div className='col-span-7 lg:col-span-5 border-x px-2'>
             <div className='flex items-center justify-between'>
@@ -10,7 +16,17 @@ export function Feed() {
             </div>
 
             {/* tweetbox */}
-            <Tweetbox />
+            <div>
+                <Tweetbox />
+            </div>
+            {/* FEED */}
+            <div>
+                {
+                    tweets.map(tweet => (
+                        <TweetComponent key={tweet._id} tweet={tweet}/>
+                    ))
+                }
+            </div>
         </div>
     );
 }
